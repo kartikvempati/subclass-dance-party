@@ -4,6 +4,9 @@
 logs
 *.log
 
+#Web storm
+*.idea
+
 # Runtime data
 pids
 *.pid
