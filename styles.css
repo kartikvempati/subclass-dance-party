@@ -34,7 +34,13 @@ body, a:link, a:visited, a:active{
   width: 100px;
 }
 
-.drunkDancer img{
+img{
     height: 100%;
     width: 100%;
+}
+
+.breakDancer {
+    position: absolute;
+    height: 100px;
+    width: 100px;
 }
