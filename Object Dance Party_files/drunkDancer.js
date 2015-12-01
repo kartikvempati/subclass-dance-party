@@ -3,8 +3,7 @@
  */
 var drunkDancer = function (top, left, timeBetweenSteps) {
   makeDancer.call(this, top, left, 1500);
-  this.$node.removeClass('dancer').addClass("drunkDancer");
-  this.$node.append('<img src="giphy.gif" >');
+  this.$node = $('<span class="drunkDancer"> <img src="giphy.gif" height="15%" ></span>');
 
   var oldStep = this.step;
 

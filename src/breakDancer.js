@@ -1,10 +1,8 @@
 /**
  * Created by student on 11/30/15.
  */
-var drunkDancer = function (top, left, timeBetweenSteps) {
+var breakDancer = function (top, left, timeBetweenSteps) {
   makeDancer.call(this, top, left, 1500);
-  this.$node.removeClass('dancer').addClass("drunkDancer");
-  this.$node.append('<img src="giphy.gif" >');
 
   var oldStep = this.step;
 
@@ -18,12 +16,13 @@ var drunkDancer = function (top, left, timeBetweenSteps) {
     var upPosition = this.$node.position().top;
     var max = 30;
     var min = -30;
-    var leftMove = Math.floor(Math.random() * (max-min) + min);
-    var topMove = Math.floor(Math.random() * (max-min) + min);
-    this.$node.animate({left: leftPosition + leftMove, top: upPosition + topMove }, 600)
+    var degrees = Math.random() * 720 -360;
+    this.$node.animate({
+      '-webkit-transform' : 'rotate('+ degrees +'deg)'
+    });
 
   };
 };
 
-drunkDancer.prototype = Object.create(makeDancer.prototype);
-drunkDancer.prototype.constructor = drunkDancer();
+breakDancer.prototype = Object.create(makeDancer.prototype);
+breakDancer.prototype.constructor = breakDancer;

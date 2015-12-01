@@ -27,14 +27,3 @@ body, a:link, a:visited, a:active{
   height: 30px;
   position:absolute;
 }
-
-.drunkDancer{
-  position: absolute;
-  height: 100px;
-  width: 100px;
-}
-
-.drunkDancer img{
-    height: 100%;
-    width: 100%;
-}
