@@ -3,7 +3,8 @@ body, html{
 }
 body{
   margin: 0px;
-    background-image: url("Black-White-Dance-Floor-e1358205419861.jpg");
+    background-image: url("superbowl.jpg");
+    background-size: cover;
   font-size: 18px;
 }
 body, a:link, a:visited, a:active{

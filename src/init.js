@@ -1,6 +1,10 @@
 $(document).ready(function () {
   window.dancers = [];
-  var song = new Audio('Avicii - Levels.mp3');
+  var song = new Audio('californiagurls.mp3');
+  song.addEventListener('ended',function() {
+    this.currentTime = 0;
+    this.play();
+  },false);
   song.play();
   $(".addDancerButton").on("click", function (event) {
     /* This function sets up the click handlers for the create-dancer
