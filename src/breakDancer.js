@@ -16,16 +16,10 @@ var breakDancer = function (top, left, timeBetweenSteps) {
     // other effects you can use on a jQuery-wrapped html tag.
     var leftPosition = this.$node.position().left;
     var upPosition = this.$node.position().top;
-    var max = 30;
-    var min = -30;
-    var degrees = Math.random() * 720 - 360;
-    //this.$node.animate({
-    //  '-webkit-transform' : 'rotate('+ degrees +'deg)'
-    //});
+
     var rotationDirection = 1;
 
     if( 0.5 <= Math.random() ) rotationDirection = -1;
-    console.log(rotationDirection * 360);
     this.$node.animate({borderSpacing: rotationDirection * 360}, {
       step: function (now, fx) {
         $(this).css('-webkit-transform', 'rotate(' + now + 'deg)');

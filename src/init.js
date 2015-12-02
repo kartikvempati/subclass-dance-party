@@ -1,7 +1,7 @@
-$(document).ready(function() {
+$(document).ready(function () {
   window.dancers = [];
 
-  $(".addDancerButton").on("click", function(event) {
+  $(".addDancerButton").on("click", function (event) {
     /* This function sets up the click handlers for the create-dancer
      * buttons on dancefloor.html. You should only need to make one small change to it.
      * As long as the "data-dancer-maker-function-name" attribute of a
@@ -28,6 +28,38 @@ $(document).ready(function() {
       Math.random() * 1000
     );
     $('body').append(dancer.$node);
+    window.dancers.push(dancer);
+  });
+
+  $(".button").on("click", function (event) {
+    for (var i = 0, dancer; dancer = window.dancers[i]; i++) {
+      dancer.moveTo(top, 0);
+    }
+  });
+
+  $("body").on('mouseover' , '.drunkDancer' , function (event) {
+    var pictop = $(this).position().top;
+    var picleft = $(this).position().left;
+    var picbottom = pictop + 100;
+    var picright = picleft + 100;
+
+    var xMid = (picleft + picright)/2;
+    var yMid = (pictop + picbottom)/2;
+    var enterX = event.clientX;
+    var enterY = event.clientY;
+
+    var destX = (xMid + (xMid - enterX) * 2) - 50;
+    var destY = (yMid + (yMid - enterY) * 2) - 50;
+
+    $(this).animate({
+      "top": destY,
+      "left": destX
+    }, 200);
+
+
   });
 });
 
+
+
+//" ,.drunkDancer, .breakDancer, .blinkyDancer"
